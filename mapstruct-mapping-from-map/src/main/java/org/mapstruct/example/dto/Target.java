@@ -27,6 +27,7 @@ public class Target {
 
     private String ip;
     private String server;
+    private Integer year;
 
     public String getIp() {
         return ip;
@@ -42,6 +43,14 @@ public class Target {
 
     public void setServer(String server) {
         this.server = server;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     @Override

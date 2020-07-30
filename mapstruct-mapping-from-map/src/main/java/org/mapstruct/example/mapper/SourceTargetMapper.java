@@ -28,6 +28,8 @@ import org.mapstruct.example.mapper.util.MappingUtil.Ip;
 import org.mapstruct.example.mapper.util.MappingUtil.Server;
 import org.mapstruct.factory.Mappers;
 
+import static org.mapstruct.example.mapper.util.MappingUtil.*;
+
 /**
  * @author Adam Gurgul
  */
@@ -39,5 +41,6 @@ public interface SourceTargetMapper {
 
     @Mapping(source = "map", target = "ip", qualifiedBy = Ip.class )
     @Mapping(source = "map", target = "server", qualifiedBy = Server.class )
+    @Mapping(source = "map", target = "year", qualifiedBy = Year.class)
     Target toTarget(Source s);
 }

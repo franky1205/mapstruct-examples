@@ -43,6 +43,13 @@ public class MappingUtil {
     public static @interface Server {
     }
 
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Year {
+
+    }
+
     @Ip
     public String ip(Map<String, Object> in) {
         return (String) in.get("ip");
@@ -53,4 +60,8 @@ public class MappingUtil {
         return (String) in.get("server");
     }
 
+    @Year
+    public Integer year(Map<String, Object> in) {
+        return (Integer) in.get("year");
+    }
 }

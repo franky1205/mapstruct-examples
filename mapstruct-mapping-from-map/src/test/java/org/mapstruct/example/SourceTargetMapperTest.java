@@ -42,18 +42,19 @@ public class SourceTargetMapperTest {
      * Test of toTarget method, of class SourceTargetMapper.
      */
     @Test
-    public void testMapperOnExistingIpAndServer() {
+    public void testMapperOnExistingIpServerAndYear() {
 
         Map<String, Object> map = new HashMap<>();
         map.put("ip", "127.0.0.1");
         map.put("server", "168.192.1.1");
+        map.put("year", 1986);
 
         Source s = new Source(map);
         Target t = SourceTargetMapper.MAPPER.toTarget( s );
 
         assertEquals(t.getIp(), "127.0.0.1");
         assertEquals(t.getServer(), "168.192.1.1");
-
+        assertEquals(t.getYear(), Integer.valueOf(1986));
     }
 
     @Test
