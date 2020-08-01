@@ -24,10 +24,13 @@ package org.mapstruct.example.dto;
  */
 public class Target {
 
-
     private String ip;
+
     private String server;
+
     private Integer year;
+
+    private Gender gender;
 
     public String getIp() {
         return ip;
@@ -51,6 +54,14 @@ public class Target {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package org.mapstruct.example;
 
 import org.junit.Test;
+import org.mapstruct.example.dto.Gender;
 import org.mapstruct.example.dto.Target;
 import org.mapstruct.example.mapper.MapTargetOrikaMapper;
 
@@ -24,12 +25,14 @@ public class MapTargetOrikaMapperTest {
         map.put("ip", "127.0.0.1");
         map.put("server", "168.192.1.1");
         map.put("year", 1986);
+        map.put("gender", Gender.Male);
 
         Target target = mapTargetOrikaMapper.map(map);
 
         assertEquals(target.getIp(), "127.0.0.1");
         assertEquals(target.getServer(), "168.192.1.1");
         assertEquals(target.getYear(), Integer.valueOf(1986));
+        assertEquals(target.getGender(), Gender.Male);
     }
 
     @Test
@@ -41,5 +44,6 @@ public class MapTargetOrikaMapperTest {
         assertNull(target.getIp());
         assertNull(target.getServer());
         assertNull(target.getYear());
+        assertNull(target.getGender());
     }
 }
